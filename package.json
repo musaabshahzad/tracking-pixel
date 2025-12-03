@@ -1,12 +1,27 @@
 {
-  "name": "tracking-pixel-vercel",
+  "name": "tracking-pixel",
   "version": "1.0.0",
-  "description": "Serverless tracking pixel with Supabase",
-  "type": "module",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "vercel dev"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musaabshahzad/tracking-pixel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/musaabshahzad/tracking-pixel/issues"
+  },
+  "homepage": "https://github.com/musaabshahzad/tracking-pixel#readme",
   "dependencies": {
-    "@supabase/supabase-js": "^2.35.0"
+    "express": "^5.2.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   }
 }
