@@ -1,16 +1,12 @@
 {
-  "name": "tracking-pixel-server",
+  "name": "tracking-pixel-vercel",
   "version": "1.0.0",
-  "description": "Simple tracking pixel server with SQLite",
-  "main": "server.js",
+  "description": "Serverless tracking pixel with Supabase",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "vercel dev"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "@supabase/supabase-js": "^2.35.0"
   }
 }
