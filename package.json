@@ -1,4 +1,13 @@
 {
+  "name": "tracking-pixel-server",
+  "version": "1.0.0",
+  "description": "Simple tracking pixel server with SQLite",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
   "dependencies": {
     "express": "^5.2.1",
     "sqlite": "^5.1.1",
