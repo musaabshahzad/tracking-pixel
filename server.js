@@ -71,6 +71,37 @@ app.get("/pixel", async (req, res) => {
 });
 
 // ==============================
+// Individual Tracking Endpoint
+// ==============================
+app.get("/tracks/:subject", async (req, res) => {
+  const subject = req.params.subject;
+
+  try {
+    const rows = await db.all(
+      `SELECT * FROM pixel_events WHERE subject = ?`,
+      [subject]
+    );
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch tracks" });
+  }
+});
+
+// ==============================
+// Delete All Tracks
+// ==============================
+app.get("/delete-tracks", async (req, res) => {
+  try {
+    await db.run(`DELETE FROM pixel_events`);
+    res.json({ success: true, message: "All tracks deleted" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to delete tracks" });
+  }
+});
+
+// ==============================
 // Retrieve Logs
 // ==============================
 app.get("/tracks", async (req, res) => {
